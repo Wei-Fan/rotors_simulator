@@ -1,0 +1,17 @@
+rotors_gazebo
+    launch:
+        (essential launch, example by mav_hovering_example.launch)
+        gazebo_ros/launch/empty_world.launch: launch world
+        rotors_gazebo/launch/spawn_mav.launch: launch gazebo_ros/spawn_model node
+        rotors_control/lee_position_controller_node: load the controller with robot configuration
+        rotors_gazebo/hovering_example: define robot hovering behaviors
+        robot_state_publisher/robot_state_publisher: unknown
+        joint_state_publisher/joint_state_publisher: unknown
+        (firefly_swarm_hovering_example.launch)
+        rotors_gazebo/waypoint_publisher: define robot behavior
+    models: store gazebo world features
+    world: store world models launched by gazebo_ros
+    resource: store robot configuration parameters and controller parameters
+
+rotors_description
+    urdf: store robot models
